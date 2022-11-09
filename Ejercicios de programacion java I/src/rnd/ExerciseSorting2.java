@@ -11,8 +11,8 @@ public class ExerciseSorting2 {
 		//sorting
 		
 		for (int i=0; i<nums.length; i++) {
-			int next=0;
-			int index=0;
+			int next=nums[i];
+			int index=i;
 			for (int j=i; j<nums.length; j++) {
 				if (nums[j]<next) {
 					next=nums[j]; 
@@ -23,7 +23,7 @@ public class ExerciseSorting2 {
 				int temp = nums[i];
 				nums[i]=next;
 				for (int x=i+1; x<index; x++) {
-					int aux=nums[x];
+					int aux=nums[x+1];
 					nums[x]=temp;
 					temp=aux;
 				}
