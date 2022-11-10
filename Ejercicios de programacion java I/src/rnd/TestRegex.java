@@ -26,7 +26,10 @@ public class TestRegex {
 	
 	// testing
 	
-	Pattern email = Pattern.compile("");
+	String str = "carlosmgov@gmail.com";
+	Pattern email = Pattern.compile("\"[a-z]{3,}\\@[a-z]{3,}\\.[a-z]{2,4}\"i");
+	Matcher finder = email.matcher(str);
+	System.out.println(finder.find() ? "Valid" : "Non valid");
 	
 	}
 
