@@ -4,6 +4,20 @@ import java.util.Arrays;
 
 public class Exercise13p3 {
 
+	public static void main(String[] args) {
+
+		int[][] nums = new int[randgen(20,2)][randgen(20,2)];
+		for (int i = 0; i < nums.length; i++) {
+			for (int j=0; j<nums[i].length; j++) {
+				nums[i][j]=randgen(1,100);
+			}
+		}
+		System.out.println("Sum of rows equals to " + Arrays.toString(rowsum(nums)));
+		System.out.println("Sum of columns equals to " + Arrays.toString(colsum(nums)));
+	}
+
+/////////////////
+
 	static int randgen (int max, int min) {
 		return (int)(Math.random()*(max-min))+min;
 	}
@@ -27,17 +41,4 @@ public class Exercise13p3 {
 		}
 		return sum;
 	}
-
-	public static void main(String[] args) {
-
-		int[][] nums = new int[randgen(20,2)][randgen(20,2)];
-		for (int i = 0; i < nums.length; i++) {
-			for (int j=0; j<nums[i].length; j++) {
-				nums[i][j]=randgen(1,100);
-			}
-		}
-		System.out.println("Sum of rows equals to " + Arrays.toString(rowsum(nums)));
-		System.out.println("Sum of columns equals to " + Arrays.toString(colsum(nums)));
-	}
-
 }
