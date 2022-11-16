@@ -21,7 +21,7 @@ public class Exercise12p3 {
 		for (int i=0; i<vec.length; i++) {
 			System.out.println("input number");
 			vec[i]=Integer.parseInt(br.readLine());
-		}
+		} //filling could be prettier with a split and ToArray funct. or sth.
 		
 		// external method
 		System.out.println(center(vec) != null ? "Center at index "+center(vec) : "No center was found");
