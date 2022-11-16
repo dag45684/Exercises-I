@@ -44,7 +44,7 @@ public class Exercise12p3 {
 			}
 			if (resB == resA) return c; 
 		}
-		return null;
+		return null; //Integer can return null 
 	}
 
 }
