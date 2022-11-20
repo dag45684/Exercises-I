@@ -16,7 +16,7 @@ public class Exercise14p3 {
 			do {
 				try {
 					System.out.println("Input the numbers separated by spc");
-					arr[i]= Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+					arr[i]= Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray(); //god i love this line
 					ok=true;
 				}catch (StackOverflowError e) {
 					System.out.println("Too much inputs");
