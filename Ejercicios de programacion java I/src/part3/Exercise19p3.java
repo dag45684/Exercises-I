@@ -22,15 +22,12 @@ public class Exercise19p3 {
 		int colinit = Integer.parseInt(br.readLine());
 		fill (v, rowinit, colinit, in);
 		print(v);
-		
-
 	}
 	
 	public static void insert (char [] rows, String data) {
 		for (int i=0; i<rows.length; i++) {
 			rows[i] = data.charAt(i);
 		}
-		
 	}
 	
 	public static void print(char[][] v) {
@@ -45,7 +42,6 @@ public class Exercise19p3 {
 		if (rowinit+1 < v.length && v[rowinit+1][colinit] == rn) fill (v, rowinit+1, colinit, in);
 		if (colinit-1 >= 0 && v[rowinit][colinit-1] == rn) fill (v, rowinit, colinit-1, in);
 		if (colinit+1 < v.length && v[rowinit][colinit+1] == rn) fill (v, rowinit, colinit+1, in);
-		
 	}
 
 }
