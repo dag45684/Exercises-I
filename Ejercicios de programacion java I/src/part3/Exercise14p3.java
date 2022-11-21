@@ -18,8 +18,8 @@ public class Exercise14p3 {
 					System.out.println("Input the numbers separated by spc");
 					arr[i]= Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray(); //god i love this line
 					ok=true;
-				}catch (StackOverflowError e) {
-					System.out.println("Too much inputs");
+				}catch (StackOverflowError | NumberFormatException e) {
+					System.out.println("Wrong input format. Please try again.");
 				}
 			}while(!ok); //dowhile creates the needed sized array, turning the size declaration useless and so the catchtry.
 		}
