@@ -50,7 +50,7 @@ public class ExercisesFromCPP {
 
 	public static boolean pal (String n) {
 
-		n = n.replace(" ", "");
+		n = n.replaceAll(" ", "");
 		for (int i=0; i<n.length()/2; i++) {
 			if (!(n.charAt(i) == n.charAt(n.length()-(i+1)))) return false;
 		}
