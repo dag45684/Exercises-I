@@ -1,6 +1,6 @@
-package OOP;
+package oop1;
 
-public class Obj1 {
+public class Main {
 
 	public static void main(String[] args) {
 
