@@ -11,7 +11,9 @@ public class Main {
 		System.out.println("zero counter value: " + zero.value);
 		System.out.println("cnt counter value: " + cnt.value);
 		
-		//Day2. 
+		//Day2. Animal
+		
+		//Day3.
 
 	}
 
