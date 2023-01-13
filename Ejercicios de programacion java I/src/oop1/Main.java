@@ -22,7 +22,7 @@ public class Main {
 		
 		//Day3. MoneyBox
 		MoneyBox poor = new MoneyBox();
-		MoneyBox accomodated = new MoneyBox(0,0,0,2,4,8);
+		MoneyBox accomodated = new MoneyBox(8,0,7,2,1,0);
 		MoneyBox rich = new MoneyBox (1337);
 		accomodated.getCoins();
 		rich.getBills();
@@ -37,6 +37,8 @@ public class Main {
 		rich.openBox();
 		rich.withdrawMoney(390);
 		rich.getValue();
+		accomodated.getBills();
+		poor.getCoins();
 		
 		
 		
