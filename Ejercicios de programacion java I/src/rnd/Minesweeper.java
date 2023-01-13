@@ -27,6 +27,7 @@ public class Minesweeper {
 			else {
 				points++;
 				clearPlace(board, instruction);
+				clearArea (board, instruction, deadZones);
 			}
 			if (points == 100-mines) {
 				System.out.println("You dodged all mines!");
@@ -52,7 +53,7 @@ public class Minesweeper {
 		char[][] board = new char[10][10];
 		for (int i=0; i<10; i++) {
 			for (int j=0; j<10; j++) {
-				board[i][j] = ' ';
+				board[i][j] = '_';
 			}
 		}
 		return board;
@@ -70,13 +71,23 @@ public class Minesweeper {
 	static boolean checkMine (String instruction, String[] dead) {
 		char row = String.valueOf(instruction.charAt(0) - 65).charAt(0); 
 		char col = String.valueOf(Integer.valueOf(instruction.charAt(1))).charAt(0);
-		System.out.println(row);
-		System.out.println(col);
 		String check = "" + row + col;
 		
 		for (int i=0; i<dead.length; i++) {
-			if (check == dead[0]) {
+			if (check == dead[i]) {
 				System.out.println("You step on a mine!");
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	static boolean checkMineSurr (int row, int col, String[] deadZones) {
+		char a = (char) (row+65);
+		char b = (char) col;
+		String check = "" + row + col;
+		for (int i=0; i<deadZones.length; i++) {
+			if (check == deadZones[i]) {
 				return true;
 			}
 		}
@@ -88,5 +99,38 @@ public class Minesweeper {
 		int col = instruction.charAt(1) - 48;
 		
 		board[row][col] = 'X';
+	}
+	
+	static void clearArea (char[][] board, String instruction, String[] deadZones) {
+		int row = instruction.charAt(0) - 65; 
+		int col = instruction.charAt(1) - 48;
+		recFill (board, row, col, deadZones);
+
+	}
+	
+	static void recFill (char[][] board, int row, int col, String[] deadZones) {
+		int surr = 0;
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row-1, col, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row+1, col, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row, col-1, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row, col+1, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row-1, col-1, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row-1, col+1, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row+1, col-1, deadZones)) surr++; };
+		if ((row!=0 || row!=10) && (col!=0 || col!=10)) { if (checkMineSurr (row+1, col+1, deadZones)) surr++; };
+
+		if (surr!=0) board[row][col] = String.valueOf(surr).charAt(0);
+		else {
+			recFill (board, row-1, col, deadZones);
+			recFill (board, row+1, col, deadZones);
+			recFill (board, row, col-1, deadZones);
+			recFill (board, row, col+1, deadZones);
+			recFill (board, row-1, col+1, deadZones);
+			recFill (board, row-1, col-1, deadZones);
+			recFill (board, row+1, col+1, deadZones);
+			recFill (board, row+1, col-1, deadZones);
+		}
+		
+		
 	}
 }
