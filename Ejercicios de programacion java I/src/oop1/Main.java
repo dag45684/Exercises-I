@@ -40,6 +40,14 @@ public class Main {
 		accomodated.getBills();
 		poor.getCoins();
 		
+		//Day 4
+		Writter hola = new Writter("Juan","@info","Maculino");
+		Writter hjd = new Writter ("Juan","@info","Maculino");
+		Writter uey = new Writter ("Pepita", "@rihg","mujer");
+		
+		
+			
+		
 		
 		
 
