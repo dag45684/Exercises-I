@@ -33,9 +33,11 @@ public class Node {
 	
 	@Override
 	public String toString () {
-		String res = this.name + '\n';
-		for (int i=0; i<this.content.size(); i++) {
-			res += this.content.get(i).getName() + '\n';
+		String res = this.name + "  " + this.size + "Kb \n";
+		if (this.hasDir) {
+			for (int i=0; i<this.content.size(); i++) {
+				res += this.content.get(i).getName() + '\n';
+			}
 		}
 		return "a";
 	}
