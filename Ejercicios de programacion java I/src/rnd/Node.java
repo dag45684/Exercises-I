@@ -4,22 +4,32 @@ import java.util.*;
 
 public class Node {
 	
-	String name;
 //	ArrayList <Tuple<Integer, String>> files = new ArrayList<Tuple<Integer, String>>();
-	ArrayList<Node> Dirs = new ArrayList<Node>();
-	Node parent;
-	int size;
+	private String name;
+	private ArrayList<Node> content = new ArrayList<Node>();
+	private Node parent;
+	private boolean isDir = false;
+	private boolean hasDir = false;
+	private int size;
 	
 	public Node (String name, Node parent) {
 		this.name = name;
 		this.parent = parent;
 	}
 
-	public String getName() {return name;}
+	public void setName (String name) {this.name = name;}
 
-	public ArrayList<Node> getContent() {return content;}
+	public void setParent (Node parent) {this.parent = parent;}
 
-	public Node getParent() {return parent;}
+	public void setIsDir () {this.isDir = true;}
+
+	public void setHasDir () {this.hasDir = true;}
+
+	public String getName() {return this.name;}
+
+	public ArrayList<Node> getContent() {return this.content;}
+
+	public Node getParent() {return this.parent;}
 	
 	@Override
 	public String toString () {
@@ -27,7 +37,7 @@ public class Node {
 		for (int i=0; i<this.content.size(); i++) {
 			res += this.content.get(i).getName() + '\n';
 		}
-		
+		return "a";
 	}
 	
 	
