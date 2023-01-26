@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class Book extends Rent{ //abstract avoids the user from creating instances of this class.
+public  class Book extends Rent{ //abstract avoids the user from creating instances of this class.
 	
 	ArrayList<String> authors;
 	

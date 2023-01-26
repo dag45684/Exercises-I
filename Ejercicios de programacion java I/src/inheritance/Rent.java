@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Rent extends Publish{
+public abstract class Rent extends Publish{
 	
 	private boolean available;
 	
