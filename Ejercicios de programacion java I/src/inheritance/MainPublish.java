@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Main {
+public class MainPublish {
 
 	public static void main(String[] args) {
 
