@@ -1,19 +1,43 @@
 package inheritance;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Book extends Rent{
 	
-	String author;
+	ArrayList<String> authors;
 	
 	public Book (String author, String title, int code, boolean available, int year) {
 		super(title, code, year, available);
-		this.author=author;
+		authors.add(author);
 	}
 
-	public String getAuthor() {return author;}
+	public Book (String title, int code, boolean available, int year, String ... author) { // ... stands for variable sized array from input
+		super(title, code, year, available);
+		for (String s : author) {
+			authors.add(s);
+		}
+	}
+	
+	public boolean addAuthor(String author) {
+		if (authors.contains(author)) {
+			return false;
+		}
+		else {
+			authors.add(author);
+			return true;
+		}
+	}
+
+	public List<String> getAuthors() {return Collections.unmodifiableList(authors);}
 
 	@Override
 	public String toString() {
-		return "Book [" + super.toString() + "] from" + author + ". Availability: " + this.isAvailable();
+		String authstr = "";
+		for (String s : authors) authstr += s;
+		return "Book [" + super.toString() + "] from" + authstr + ". \nAvailability: " + this.isAvailable();
 	}
 
 }

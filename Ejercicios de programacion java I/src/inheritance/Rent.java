@@ -13,8 +13,8 @@ public class Rent extends Publish{
 		return available;
 	}
 
-	public void setAvailable(boolean available) {
-		this.available = available;
+	public void setAvailability () {
+		this.available = available ? false : true;
 	}
 	
 }
