@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Publish {
+public abstract class Publish { //abstract avoids the user from creating instances of this class.
 	
 	private String title;
 	private int code;
@@ -22,5 +22,11 @@ public class Publish {
 	public String toString() {
 		return "title=" + title + ", code=" + code + ", year=" + year;
 	}
+	
+	// public abstract void AbsMethod();
+	// objects of this class will have to implement this method,
+	// but doesnt restrain its characteristics or defines a
+	// model to be overwritten. 
+	// Exceptionally, abstract subclasses will be exempted of it
 	
 }
