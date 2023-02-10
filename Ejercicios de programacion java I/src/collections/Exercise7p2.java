@@ -21,15 +21,14 @@ public class Exercise7p2 {
 	public static Stack<Integer> methodSolver(Stack<Integer> stack){
 		
 		Stack<Integer> temp = new Stack<>();
-		Stack<Integer> res = new Stack<>();
-		temp.add(stack.pop());
+		temp.push(stack.pop());
 		while (!stack.isEmpty()) {
-			if (stack.peek() >= temp.peek()) temp.add(stack.pop());
+			if (stack.peek() >= temp.peek()) temp.push(stack.pop());
 			else stack.pop();
 		}
-		for (Integer i : temp) res.add(i);
+		for (Integer i : temp) stack.push(i);
 		
-		return res;
+		return stack;
 	}
 
 	// I hated this exercise in great ammounts thank you
