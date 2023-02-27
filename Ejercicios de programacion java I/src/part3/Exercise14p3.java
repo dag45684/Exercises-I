@@ -17,6 +17,7 @@ public class Exercise14p3 {
 				try {
 					System.out.println("Input the numbers separated by spc");
 					arr[i]= Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray(); //god i love this line
+					//method reference Integer::parseInt can also be a lambda
 					ok=true;
 				}catch (StackOverflowError | NumberFormatException e) {
 					System.out.println("Wrong input format. Please try again.");
