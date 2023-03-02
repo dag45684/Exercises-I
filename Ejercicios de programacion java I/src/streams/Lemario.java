@@ -3,11 +3,8 @@ package streams;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.TreeMap;
 
 public class Lemario {
 
@@ -25,7 +22,7 @@ public class Lemario {
 		
 		//2.Group words that begin with the same three characters when length over 3
 		
-		Map<String, ArrayList<String>> gr = new HashMap<>();
+//		Map<String, ArrayList<String>> gr = new HashMap<>();
 //		lemario.forEach(n -> {
 //			if (n.length() > 3 && !gr.containsKey(n.substring(0, 3))) {
 //				gr.put(n.substring(0, 3), new ArrayList<>());
@@ -42,14 +39,28 @@ public class Lemario {
 //		res.forEach((k, v) -> System.out.println(k + " " + v));
 		
 		//3. Find palyndromes and store them in a list
-		List<String> pal;
-		pal = lemario.stream().filter(n -> n.equals(new StringBuilder(n).reverse().toString())).toList();
-		pal.forEach(System.out::println);
+//		List<String> pal;
+//		pal = lemario.stream().filter(n -> n.equals(new StringBuilder(n).reverse().toString())).toList();
+//		pal.forEach(System.out::println);
 		
 		//4. count the number of words that each letter appears in
+//		TreeMap<Character, Integer> i;
+//		i = lemario.stream().filter(e -> lemario.stream().filter(s -> s.contains(e.charAt(0))).distinct().toList().size()));
+//		Long Shot not working
+		TreeMap<Integer, Integer> fk = new TreeMap<>();
+		lemario.forEach(e -> e.chars().forEach(c -> fk.put(c, lemario.stream().filter(n -> n.contains(Character.toString((char)c))).toArray().length)));
 		
+		fk.forEach(e -> System.out.println(fk.get(e)));
+			
+//		TreeMap<Integer, Integer> fk = new TreeMap<>();
+//		lemario.stream().flatMap(p -> p.chars().boxed()).collect(null)
+//			
+//			
+//		});
 		
-//		lemario.stream().
+//		TreeMap<Integer, Integer> i;
+//		lemario.stream().flatMap(p -> p.chars().boxed())
+		
 		
 	}
 
