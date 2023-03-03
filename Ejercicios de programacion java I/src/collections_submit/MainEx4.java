@@ -21,7 +21,9 @@ public class MainEx4 {
 				if (command.substring(4).contains(" ")) {
 					eng.addWordsBySentence(command.substring(5));
 				}
-				else eng.addWord(command.substring(5));
+				else {
+					eng.addWord(command.substring(5));
+				}
 			}
 			else if (command.contains("List ")) {
 				try {
@@ -39,9 +41,13 @@ public class MainEx4 {
 				if (command.substring(4).contains(" ")) {
 					eng.addWordsBySentence(command.substring(5));
 				}
-				else eng.addWord(command.substring(5));
+				else {
+					eng.addWord(command.substring(5));
+				}
 			}
-			else if (!command.equals("Exit")) System.out.println("Wrong command syntax, please retry.");
+			else if (!command.equals("Exit")) {
+				System.out.println("Wrong command syntax, please retry.");
+			}
 		}
 	}
 }

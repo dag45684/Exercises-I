@@ -15,6 +15,9 @@ public class Words {
 		for (String s : temp) cont.add(s);		
 	}
 	
+	//Since the addWordsBySentence works just fine with just a single word
+	//this method is bloated and i'd avoid using it, however, it is
+	//required by the exercise
 	public void addWord (String in) {
 			cont.add(in);
 	}
