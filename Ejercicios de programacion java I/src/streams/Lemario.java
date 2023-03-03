@@ -48,10 +48,15 @@ public class Lemario {
 //		i = lemario.stream().filter(e -> lemario.stream().filter(s -> s.contains(e.charAt(0))).distinct().toList().size()));
 //		Long Shot not working
 		TreeMap<Integer, Integer> fk = new TreeMap<>();
-		lemario.forEach(e -> e.chars().forEach(c -> fk.put(c, lemario.stream().filter(n -> n.contains(Character.toString((char)c))).toArray().length)));
+		lemario.forEach(e -> e.chars().filter( f -> !fk.containsKey(f)).forEach(c -> fk.put(c, lemario.stream().filter(n -> n.contains(Character.toString((char)c))).toArray().length)));
 		
-		fk.forEach(e -> System.out.println(fk.get(e)));
-			
+//		fk.forEach(e -> System.out.println(fk.get(e)));
+//		System.out.println(fk);
+		char z = 'a';
+		for (Integer key : fk.keySet()) {
+			System.out.println(z + " " + fk.get(key));
+			z++;
+		}
 //		TreeMap<Integer, Integer> fk = new TreeMap<>();
 //		lemario.stream().flatMap(p -> p.chars().boxed()).collect(null)
 //			
