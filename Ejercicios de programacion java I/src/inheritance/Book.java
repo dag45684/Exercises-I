@@ -39,4 +39,10 @@ public  class Book extends Rent{ //abstract avoids the user from creating instan
 		return "Book [" + super.toString() + "] from" + authstr + ". \nAvailability: " + this.isAvailable();
 	}
 
+	@Override
+	public int compareTo(Publish o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

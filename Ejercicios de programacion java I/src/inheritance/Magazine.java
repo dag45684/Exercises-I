@@ -24,4 +24,10 @@ public class Magazine extends Publish{
 		return "Magazine [" + super.toString() + "] with number " + number + "at " + day + "/" + month;
 	}
 
+	@Override
+	public int compareTo(Publish o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
