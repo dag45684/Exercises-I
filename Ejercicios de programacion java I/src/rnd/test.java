@@ -1,20 +1,19 @@
 package rnd;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.text.Normalizer;
-import java.text.Normalizer.Form;
+import java.util.ArrayList;
 
 public class test {
 
-	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 	public static void main(String[] args) {
 	
-		String s = "Salón camión Érica pértiga manín";
-		s = Normalizer.normalize(s, Normalizer.Form.NFKD).replaceAll("[^\\p{ASCII}]", "");
-		
-		System.out.println(s);
+		ArrayList<Integer> n = new ArrayList<>();
+		for (int i=0; i<10; i++) {
+			int t = (int) (Math.random()*100)+1;
+			if (t >= 10) {
+				n.add(t);
+			}
+		}
+		n.forEach(System.out::println);
 
 	}
 }
