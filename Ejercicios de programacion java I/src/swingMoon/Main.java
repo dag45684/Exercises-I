@@ -12,7 +12,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
@@ -25,11 +28,14 @@ public class Main extends JFrame{
 	private Timer timer; 
 	private String[] difficulties = {"Easy", "Medium", "Hard", "Funny"};
 	private JButton control;
+	private JTextArea target = new JTextArea(" ");;
 	
 	Main(String[] args){
 //		Initial setup config
 		super("MyApp");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		target.setVisible(false);
+		add(target, BorderLayout.NORTH);
 		
 //		Creating the content and passing the necessary moon element to play
 		Container content = getContentPane();
@@ -67,19 +73,31 @@ public class Main extends JFrame{
 	
 	public void rotate(ActionEvent e) {
 		if (timer.isRunning()) {
-			control.setText("PLAY");
+			control.setText("Play again");
 			timer.stop();
+			gameChecker();
 		} else {
-			rndGame();
+			target = new JTextArea(rndGame());
+			target.setVisible(true);
 			control.setText("STOP");
 			timer.start();
 		}
 	}
 	
-	public void rndGame() {
+	public String rndGame() {
 		int rnd = (int) (Math.random() * 7);
-		String msg = "Stop on: " + Moon.getPhases()[rnd];
-		//get to implement this!!
+		return "Stop on: " + Moon.getPhases()[rnd];
+	}
+	
+	public void gameChecker () {
+		if (target.getText().contains(moon.getName())){
+			target.setCaretColor(Color.GREEN);
+			target = new JTextArea("Correcto!");
+		}
+		else {
+			target.setCaretColor(Color.RED);
+			target = new JTextArea("Incorrecto!");
+		}
 	}
 	
 	public void selectDiff (int diff) {
