@@ -129,7 +129,7 @@ public class Nu {
 		//Restar porcentaje: multiplicas por cero coma y el porcentaje a restar
 		double me = 100 * 0.25f;
 		
-		//Sumar porcentaje: multiplicas por uno coma y el porcentaje a restar
+		//Sumar porcentaje: multiplicas por uno coma y el porcentaje a sumar
 		double ma = 100 * 1.39f;
 		
 		//declara las cosas ANTES de necesitarlas y FUERA de los bucles si no quieres que desaparezcan
