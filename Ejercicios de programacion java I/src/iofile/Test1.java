@@ -11,8 +11,7 @@ import java.io.InputStream;
 public class Test1 {
 
 	public static void main(String[] args) throws IOException {
-
-//		readByBytes();
+		readByBytes();
 		writeInFile();
 		readFromFile();
 	}
@@ -38,6 +37,12 @@ public class Test1 {
 	}
 	
 	static void readByBytes () throws IOException{
-//		try (InputStream in = )
+		try (InputStream in = Test1.class.getResourceAsStream("/lemario-general-del-espanol.txt")) {
+			int data = in.read();
+			while (data != -1) {
+				data = in.read();
+				System.out.println(data);
+			}
+		}
 	}
 }
