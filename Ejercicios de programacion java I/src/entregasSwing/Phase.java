@@ -1,4 +1,4 @@
-package swingMoon;
+package entregasSwing;
 
 import javax.swing.ImageIcon;
 

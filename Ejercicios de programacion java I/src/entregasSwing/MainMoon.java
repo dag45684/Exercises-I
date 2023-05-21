@@ -1,4 +1,4 @@
-package swingMoon;
+package entregasSwing;
 
 import java.awt.BorderLayout;
 
@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
-public class Main extends JFrame{
+public class MainMoon extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -30,7 +30,7 @@ public class Main extends JFrame{
 	private JButton control;
 	private JTextArea target = new JTextArea(" ");;
 	
-	Main(String[] args){
+	MainMoon(String[] args){
 //		Initial setup config
 		super("MyApp");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -118,7 +118,7 @@ public class Main extends JFrame{
 	}
 	
 	public static void main(final String[] args) {
-		SwingUtilities.invokeLater(() -> new Main(args).setVisible(true));
+		SwingUtilities.invokeLater(() -> new MainMoon(args).setVisible(true));
 	}
 
 }
